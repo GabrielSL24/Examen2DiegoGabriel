@@ -2,6 +2,7 @@ package com.example.examen2;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
@@ -39,6 +40,26 @@ public class Test1 {
         int resultado = Calculadora.realizarOperacion(num1, num2, operador);
 
         assertEquals(resultadoEsperado, resultado);
+    }
+
+    @Test
+    public void testDivisionPorCero() {
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            Calculadora.realizarOperacion(5, 0, "/");
+        });
+        assertEquals("División por 0", exception.getMessage());
+    }
+
+    @Test
+    public void testConvertirADestinoBinario() {
+        String resultado = Calculadora.convertirADestino(10, 0);
+        assertEquals("1010", resultado); // 10 en binario es 1010
+    }
+
+    @Test
+    public void testConvertirADestinoOctal() {
+        String resultado = Calculadora.convertirADestino(10, 1);
+        assertEquals("12", resultado); // 10 en octal es 12
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Calculadora {
 
-    // Método para convertir el número a la base seleccionada (0: Binario, 1: Octal, 2: Decimal, 3: Hexadecimal)
+    // Método pra convertir el número a la base seleccionada (0: Binario, 1: Octal, 2: Decimal, 3: Hexadecimal)
     public static int convertirNumero(String input, int base) {
         int numero = 0;
         try {
